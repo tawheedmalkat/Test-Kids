@@ -4,8 +4,9 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../Helpers/Constants/Colors.dart';
-import '../../widgets/Custom-Button.dart';
-import '../../widgets/CustomTextFormField.dart';
+import '../../Helpers/widgets/Custom-Button.dart';
+import '../../Helpers/widgets/CustomTextFormField.dart';
+
 
 
 
@@ -37,7 +38,7 @@ class SignInScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 50,
                   fontFamily: 'JollyLodger',
-                  color: Colors.white, // مطلوب لضمان عمل ShaderMask بشكل صحيح
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -95,14 +96,14 @@ class SignInScreen extends StatelessWidget {
               ),)),
             ),
             Center(
-              child: Lottie.asset('assets/images/ezgif-5-bbfd373b5c.mp4.lottie.json',
-                  height: 300,reverse: true,repeat: true,fit: BoxFit.cover),
+              child: Image.asset('assets/images/bear.PNG',height: 300
+                  ,fit: BoxFit.cover),
             ),
             SizedBox(height: 10),
             ButtonForword(
               text: "Go",
               onTap: () {
-                Get.toNamed('/');
+                Get.toNamed('/navBar');
               },
               buttonColor:  ThemeApp.animalframeColor,
 

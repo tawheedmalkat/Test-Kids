@@ -63,7 +63,7 @@ class SignInController extends GetxController {
       isLoading.value = true;
       update();
 
-      String url = "https://example.com/login"; // ضع رابط الـ API الخاص بك هنا
+      String url = "https://example.com/login";
       final uri = Uri.parse(url);
       final response = await http.post(
         uri,

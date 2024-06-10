@@ -13,7 +13,7 @@ class HomeController extends GetxController with SingleGetTickerProviderMixin {
         final pickedFile = await picker.pickImage(source: ImageSource.gallery);
         if (pickedFile != null) {
           imageFile = File(pickedFile.path);
-          update(); // تحديث حالة imageFile
+          update();
         } else {
           print('No image selected.');
         }}

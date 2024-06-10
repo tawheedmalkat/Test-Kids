@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import '../Helpers/Constants/Colors.dart';
-import '../Modules/SignIn/signIn-Controller.dart';
+import '../../Modules/SignIn/signIn-Controller.dart';
+import '../Constants/Colors.dart';
+
+
 
 
 class CustomTextFormField extends StatelessWidget {

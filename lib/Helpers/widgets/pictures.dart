@@ -2,8 +2,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../Helpers/Constants/Colors.dart';
-import '../Modules/Main-Page/Home-Controller.dart';
+
+import '../../Modules/Main/Home-Controller.dart';
+import '../Constants/Colors.dart';
+
 
 class picture extends StatelessWidget {
   const picture({
@@ -42,9 +44,9 @@ class picture extends StatelessWidget {
                 : null,
             child: controller.imageFile == null
                 ? Icon(
-              Icons.camera_alt_outlined,
-              size: 25,
-              color: ThemeApp.clothingColor,
+              Icons.person,
+              size: 28,
+              color: Colors.blueGrey,
             )
                 : null,
           ),

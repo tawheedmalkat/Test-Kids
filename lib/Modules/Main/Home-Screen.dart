@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -7,12 +6,11 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import '../../Helpers/Constants/Colors.dart';
 import '../../Helpers/Search/search.dart';
-import '../../widgets/Circle.dart';
-import '../../widgets/Grid-Categories-View.dart';
-import '../../widgets/categories.dart';
-import '../../widgets/flexy-text.dart';
-import '../../widgets/pictures.dart';
-import '../../widgets/search-appbar.dart';
+import '../../Helpers/widgets/Circle.dart';
+import '../../Helpers/widgets/Grid-Categories-View.dart';
+import '../../Helpers/widgets/flexy-text.dart';
+import '../../Helpers/widgets/pictures.dart';
+import '../../Helpers/widgets/search-appbar.dart';
 import 'Home-Controller.dart';
 
 class HomePage extends StatelessWidget {
@@ -41,14 +39,14 @@ class HomePage extends StatelessWidget {
             text: "Choose what",
             color: ThemeApp.textColor,
             fontWeight: FontWeight.bold,
-            fontSize: 30,
+            fontSize: 27,
             padding: const EdgeInsets.only(left: 20),
           ),
           FlexibleText(
             text: "to learn Today?",
             color: ThemeApp.textColor,
             fontWeight: FontWeight.normal,
-            fontSize: 35,
+            fontSize: 30,
             padding: const EdgeInsets.only(left: 20),
           ),
           Padding(
@@ -60,53 +58,11 @@ class HomePage extends StatelessWidget {
               child: ContainerSearch(),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(left: 20.0),
-            child: Wrap(
-              spacing: 15.0,
-              runSpacing: 15.0,
-              children: [
-                CircleAvatarWithText(
-                  imageUrl: "assets/images/colori.png",
-                  text: "Colors",
-                ),
-                CircleAvatarWithText(
-                  imageUrl: "assets/images/hand.png",
-                  text: "Body",
-                ),
-                CircleAvatarWithText(
-                  imageUrl: "assets/images/clothing.png",
-                  text: "Clothes",
-                ),
-                CircleAvatarWithText(
-                  imageSize: 60,
-                  imageUrl: "assets/images/apple.png",
-                  text: "Fruits",
-                ),
-                CircleAvatar(
-                  backgroundColor: ThemeApp.pageColor,
-                  radius: 30,
-                  child: SizedBox(
-                    width: 30,
-                    height: 30,
-                    child: Center(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Icon(
-                          Icons.keyboard_double_arrow_down,
-                          color: ThemeApp.mainColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          GridviewCategory(),
+
+
+           GridviewCategory(),
+
+
         ],
       ),
     );
@@ -114,12 +70,18 @@ class HomePage extends StatelessWidget {
 
   Row buildHeader(double screenWidth) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+     // mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        picture(controller: controller),
-        SizedBox(width: screenWidth * 0.45),
+        Padding(
+          padding:  EdgeInsets.only(left: 8.0),
+          child: picture(controller: controller),
+        ),
+       SizedBox(width: screenWidth * 0.52),
+        IconButton(
+            onPressed: () {}, icon: Icon(Icons.notifications_active, size: 30,color: ThemeApp.clothingColor,)),
         IconButton(
             onPressed: () {}, icon: Icon(Icons.segment_outlined, size: 40)),
+
       ],
     );
   }
